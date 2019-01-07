@@ -11,8 +11,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Peanut.Data.Models;
 using Peanut.Web.Models;
-using Peanut.Web.Areas.Identity.Data;
 
 namespace Peanut.Web
 {
@@ -39,7 +39,16 @@ namespace Peanut.Web
                 options.UseSqlServer(
                     this.Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddDefaultIdentity<PeanutWebUser>()
+            services.AddDefaultIdentity<PeanutWebUser>(
+                    options =>                              //  For development only! Comment from this line for production!
+                    {                                                   //
+                        options.Password.RequiredLength = 6;            //
+                        options.Password.RequireLowercase = false;      //  
+                        options.Password.RequireNonAlphanumeric = false;//
+                        options.Password.RequireUppercase = false;      //
+                        options.Password.RequireDigit = false;          //
+                    })                                                  //
+                                                            //  For development only! Comment up to this line
                 .AddEntityFrameworkStores<PeanutContext>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);

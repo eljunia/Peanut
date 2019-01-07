@@ -1,4 +1,5 @@
-﻿@inject SignInManager<PeanutWebUser> SignInManager
+﻿@using Peanut.Data.Models
+@inject SignInManager<PeanutWebUser> SignInManager
 @{
     var hasExternalLogins = (await SignInManager.GetExternalAuthenticationSchemesAsync()).Any();
 }

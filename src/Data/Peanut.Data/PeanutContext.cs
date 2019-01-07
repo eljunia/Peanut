@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Peanut.Web.Areas.Identity.Data;
+using Peanut.Data.Models;
 
 namespace Peanut.Web.Models
 {

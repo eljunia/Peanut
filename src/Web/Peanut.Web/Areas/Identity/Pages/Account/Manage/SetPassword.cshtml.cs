@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Peanut.Web.Areas.Identity.Data;
+using Peanut.Data.Models;
 
 namespace Peanut.Web.Areas.Identity.Pages.Account.Manage
 {
