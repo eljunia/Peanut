@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Peanut.Web.Models.Home
+namespace Peanut.Services.Models.Home
 {
     public class IndexSayingViewModel
     {

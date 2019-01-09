@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Peanut.Web.Models.Home
+namespace Peanut.Services.Models.Home
 {
     public class IndexViewModel
     {

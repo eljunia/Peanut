@@ -17,7 +17,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{59006315
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SandBox", "Tests\SandBox\SandBox.csproj", "{C8FD7098-4596-4797-BC62-EC5003A2227D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Peanut.Data.Common", "Data\Peanut.Data.Common\Peanut.Data.Common.csproj", "{CCF14BEE-6F10-45DD-855D-EC5147126C67}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Peanut.Data.Common", "Data\Peanut.Data.Common\Peanut.Data.Common.csproj", "{CCF14BEE-6F10-45DD-855D-EC5147126C67}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{B5420BE3-19E5-4FC9-90EA-DB7E174A3FDB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Peanut.Services.DataServices", "Services\Peanut.Services.DataServices\Peanut.Services.DataServices.csproj", "{1D4646C2-A94D-4923-8629-00F4A1C0678E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Peanut.Services.Models", "Services\Peanut.Services.Models\Peanut.Services.Models.csproj", "{ED9DC507-49F6-4D53-B42F-21B69100C621}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +51,14 @@ Global
 		{CCF14BEE-6F10-45DD-855D-EC5147126C67}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CCF14BEE-6F10-45DD-855D-EC5147126C67}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CCF14BEE-6F10-45DD-855D-EC5147126C67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D4646C2-A94D-4923-8629-00F4A1C0678E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D4646C2-A94D-4923-8629-00F4A1C0678E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D4646C2-A94D-4923-8629-00F4A1C0678E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D4646C2-A94D-4923-8629-00F4A1C0678E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED9DC507-49F6-4D53-B42F-21B69100C621}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED9DC507-49F6-4D53-B42F-21B69100C621}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED9DC507-49F6-4D53-B42F-21B69100C621}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED9DC507-49F6-4D53-B42F-21B69100C621}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,6 +69,8 @@ Global
 		{FBFED366-17D9-44D7-9378-21A4D8D3F677} = {D3F237AD-CF9C-4127-8696-F173095D4335}
 		{C8FD7098-4596-4797-BC62-EC5003A2227D} = {59006315-1943-41C6-8B3A-0C7DD28B66B1}
 		{CCF14BEE-6F10-45DD-855D-EC5147126C67} = {D3F237AD-CF9C-4127-8696-F173095D4335}
+		{1D4646C2-A94D-4923-8629-00F4A1C0678E} = {B5420BE3-19E5-4FC9-90EA-DB7E174A3FDB}
+		{ED9DC507-49F6-4D53-B42F-21B69100C621} = {B5420BE3-19E5-4FC9-90EA-DB7E174A3FDB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E1D2EEBE-2750-4C29-A84C-4D679F174329}

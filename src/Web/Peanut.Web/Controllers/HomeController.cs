@@ -7,31 +7,24 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Peanut.Data.Common;
 using Peanut.Data.Models;
+using Peanut.Services.DataServices;
+using Peanut.Services.Models.Home;
 using Peanut.Web.Models;
-using Peanut.Web.Models.Home;
 
 namespace Peanut.Web.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly IRepository<Saying> sayingsRepository;
+        private readonly ISayingsService sayingsService;
 
-        public HomeController(IRepository<Saying> sayingsRepository)
+        public HomeController(ISayingsService sayingsService)
         {
-            this.sayingsRepository = sayingsRepository;
+            this.sayingsService = sayingsService;
         }
-
 
         public IActionResult Index()
         {
-            var sayings = this.sayingsRepository.All()
-                .OrderBy(x => Guid.NewGuid())
-                .Select(
-                x => new IndexSayingViewModel
-                {
-                    Content = x.Content,
-                    CategoryName = x.Category.Name,
-                });
+            var sayings = this.sayingsService.GetRandomSayings(20);
 
             var viewModel = new IndexViewModel
             {

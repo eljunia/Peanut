@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Data\Peanut.Data.Common\Peanut.Data.Common.csproj" />
+    <ProjectReference Include="..\..\Data\Peanut.Data.Models\Peanut.Data.Models.csproj" />
+    <ProjectReference Include="..\Peanut.Services.Models\Peanut.Services.Models.csproj" />
+  </ItemGroup>
+
+</Project>
