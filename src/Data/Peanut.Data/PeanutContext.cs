@@ -17,7 +17,7 @@ namespace Peanut.Web.Models
         }
 
         public DbSet<Category> Categories { get; set; }
-        public DbSet<Joke> Jokes { get; set; }
+        public DbSet<Saying> Sayings { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

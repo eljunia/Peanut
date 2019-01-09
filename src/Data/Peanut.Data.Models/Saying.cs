@@ -2,7 +2,7 @@
 
 namespace Peanut.Data.Models
 {
-    public class Joke : BaseModel<int>
+    public class Saying : BaseModel<int>
     {
         public string Content { get; set; }
         public int CategoryId { get; set; }

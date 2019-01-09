@@ -11,7 +11,7 @@ using Peanut.Services.MachineLearning;
 using Peanut.Services.Mapping;
 using Peanut.Services.Models.Home;
 using Peanut.Web.Infrastructure;
-using Peanut.Web.Model.Jokes;*/
+using Peanut.Web.Model.Sayings;*/
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Hosting;
@@ -78,9 +78,9 @@ namespace Peanut.Web
 
             // Application services
             services.AddScoped(typeof(IRepository<>), typeof(DbRepository<>));
-            services.AddScoped<IJokesService, JokesService>();
+            services.AddScoped<ISayingsService, SayingsService>();
             services.AddScoped<ICategoriesService, CategoriesService>();
-            services.AddScoped<IJokesCategorizer, JokesCategorizer>();
+            services.AddScoped<ISayingsCategorizer, SayingsCategorizer>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -45,7 +45,7 @@ namespace Sandbox
 
             for (var i = 4233; i < 10000; i++)
             {
-                var url = "http://fun.dir.bg/vic_open.php?id=" + i;
+                var url = "https://simetro.com/misli/read.php?id=" + i;
                 string html = null;
                 for (int j = 0; j < 10; j++)
                 {
@@ -66,10 +66,10 @@ namespace Sandbox
                 }
 
                 var document = parser.Parse(html);
-                var jokeContent = document.QuerySelector("#newsbody")?.TextContent?.Trim();
-                var categoryName = document.QuerySelector(".tag-links-left a")?.TextContent?.Trim();
+                var sayingContent = document.QuerySelector(".title h3")?.TextContent?.Trim();
+                var categoryName = document.QuerySelector(".title:nth-child(2) h3 a")?.TextContent?.Trim();
 
-                if (!string.IsNullOrWhiteSpace(jokeContent) &&
+                if (!string.IsNullOrWhiteSpace(sayingContent) &&
                     !string.IsNullOrWhiteSpace(categoryName))
                 {
                     var category = context.Categories.FirstOrDefault(x => x.Name == categoryName);
@@ -81,13 +81,13 @@ namespace Sandbox
                         };
                     }
 
-                    var joke = new Joke()
+                    var saying = new Saying()
                     {
                         Category = category,
-                        Content = jokeContent,
+                        Content = sayingContent,
                     };
 
-                    context.Jokes.Add(joke);
+                    context.Sayings.Add(saying);
                     context.SaveChanges();
                 }
 
