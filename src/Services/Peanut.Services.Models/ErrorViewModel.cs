@@ -1,6 +1,6 @@
 using System;
 
-namespace Peanut.Web.Models
+namespace Peanut.Services.Models
 {
     public class ErrorViewModel
     {
