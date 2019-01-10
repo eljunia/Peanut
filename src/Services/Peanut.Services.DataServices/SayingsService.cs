@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Peanut.Data.Common;
 using Peanut.Data.Models;
-//using Peanut.Services.Mapping;
+using Peanut.Services.Mapping;
 using Peanut.Services.Models.Home;
 using Peanut.Services.Models.Sayings;
 using Remotion.Linq.Utilities;
@@ -25,7 +25,7 @@ namespace Peanut.Services.DataServices
             this.categoriesRepository = categoriesRepository;
         }
 
-        public IEnumerable<IndexSayingViewModel> GetRandomJokes(int count)
+        public IEnumerable<IndexSayingViewModel> GetRandomSayings(int count)
         {
             var sayings = this.sayingsRepository.All()
                 .OrderBy(x => Guid.NewGuid())
@@ -53,7 +53,7 @@ namespace Peanut.Services.DataServices
             return saying.Id;
         }
 
-        public TViewModel GetJokeById<TViewModel>(int id)
+        public TViewModel GetSayingById<TViewModel>(int id)
         {
             var saying = this.sayingsRepository.All().Where(x => x.Id == id)
                 .To<TViewModel>().FirstOrDefault();

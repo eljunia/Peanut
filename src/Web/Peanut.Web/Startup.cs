@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-//using AutoMapper;
+using AutoMapper;
 using Peanut.Data;
 using Peanut.Data.Common;
 using Peanut.Data.Models;
 using Peanut.Services.DataServices;
 //using Peanut.Services.MachineLearning;
-//using Peanut.Services.Mapping;
+using Peanut.Services.Mapping;
 using Peanut.Services.Models.Home;
 //using Peanut.Web.Infrastructure;
-//using Peanut.Web.Model.Sayings;
+using Peanut.Web.Model.Sayings;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Hosting;
@@ -38,11 +38,11 @@ namespace Peanut.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
- /*           AutoMapperConfig.RegisterMappings(
+            AutoMapperConfig.RegisterMappings(
                 typeof(IndexViewModel).Assembly,
-                typeof(CreateJokeInputModel).Assembly
+                typeof(CreateSayingInputModel).Assembly
             );
-*/
+
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
@@ -66,8 +66,8 @@ namespace Peanut.Web
                 )
                 .AddEntityFrameworkStores<PeanutContext>();
 
-            services.AddMvc()
-                .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+  //          services.AddMvc()
+  //              .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddAutoMapper();
 
 

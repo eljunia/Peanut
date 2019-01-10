@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Peanut.Data.Common;
 using Peanut.Data.Models;
-//using Peanut.Services.Mapping;
+using Peanut.Services.Mapping;
 using Peanut.Services.Models.Categories;
 
 namespace Peanut.Services.DataServices

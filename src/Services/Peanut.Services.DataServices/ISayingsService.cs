@@ -14,6 +14,6 @@ namespace Peanut.Services.DataServices
 
         Task<int> Create(int categoryId, string content);
 
-        TViewModel GetJokeById<TViewModel>(int id);
+        TViewModel GetSayingById<TViewModel>(int id);
     }
 }

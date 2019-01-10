@@ -7,6 +7,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Data\Peanut.Data.Common\Peanut.Data.Common.csproj" />
     <ProjectReference Include="..\..\Data\Peanut.Data.Models\Peanut.Data.Models.csproj" />
+    <ProjectReference Include="..\Peanut.Services.Mapping\Peanut.Services.Mapping.csproj" />
     <ProjectReference Include="..\Peanut.Services.Models\Peanut.Services.Models.csproj" />
   </ItemGroup>
 

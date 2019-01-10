@@ -13,3 +13,4 @@ namespace Peanut.Services.Models.Sayings
         public string CategoryName { get; set; }
     }
 }
+

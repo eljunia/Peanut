@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-//using AutoMapper;
+using AutoMapper;
 using Peanut.Data.Models;
-//using Peanut.Services.Mapping;
+using Peanut.Services.Mapping;
 
 namespace Peanut.Services.Models.Categories
 {
@@ -24,7 +24,7 @@ namespace Peanut.Services.Models.Categories
         {
             configuration.CreateMap<Category, CategoryIdAndNameViewModel>()
                 .ForMember(x => x.CountOfAllSayings,
-                    m => m.MapFrom(c => c.Sayings.Count()));
+                    m => m.MapFrom()(c => c.Sayings.Count()));
         }
     }
 }
