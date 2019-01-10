@@ -4,8 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Peanut.Services.DataServices;
 //using Peanut.Services.MachineLearning;
-//using Peanut.Services.Models.Sayings;
-//using Peanut.Web.Model.Sayings;
+using Peanut.Services.Models.Sayings;
+using Peanut.Web.Model.Sayings;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -53,13 +53,13 @@ namespace Peanut.Web.Controllers
             return this.RedirectToAction("Details", new { id = id });
         }
 
- /*       public IActionResult Details(int id)
+        public IActionResult Details(int id)
         {
             var saying = this.sayingsService.GetSayingById<SayingDetailsViewModel>(id);
             return this.View(saying);
         }
 
-        [HttpPost]
+ /*       [HttpPost]
         public SuggestCategoryResult SuggestCategory(string saying)
         {
             var category = this.sayingsCategorizer.Categorize("MlModels/SayingsCategoryModel.zip", saying);

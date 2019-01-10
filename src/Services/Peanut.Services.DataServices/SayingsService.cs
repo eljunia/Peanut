@@ -55,9 +55,9 @@ namespace Peanut.Services.DataServices
 
         public TViewModel GetJokeById<TViewModel>(int id)
         {
-            var joke = this.sayingsRepository.All().Where(x => x.Id == id)
+            var saying = this.sayingsRepository.All().Where(x => x.Id == id)
                 .To<TViewModel>().FirstOrDefault();
-            return joke;
+            return saying;
         }
 
         public IEnumerable<SayingSimpleViewModel> GetAllByCategory(int categoryId)
@@ -66,7 +66,7 @@ namespace Peanut.Services.DataServices
                     .Where(j => j.CategoryId == categoryId)
                     .To<SayingSimpleViewModel>();
 
-        public bool AddRatingToJoke(int sayingId, int rating)
+        public bool AddRatingToSaying(int sayingId, int rating)
         {
             var saying = this.sayingsRepository.All().FirstOrDefault(j => j.Id == sayingId);
             if (saying != null)
