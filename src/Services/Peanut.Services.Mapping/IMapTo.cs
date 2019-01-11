@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Peanut.Services.Mapping
+﻿namespace FunApp.Services.Mapping
 {
-    public interface IMapTo
+    public interface IMapTo<T>
     {
     }
 }

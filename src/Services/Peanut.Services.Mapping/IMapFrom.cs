@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Peanut.Services.Mapping
+﻿namespace Peanut.Services.Mapping
 {
     public interface IMapFrom<T>
     {
