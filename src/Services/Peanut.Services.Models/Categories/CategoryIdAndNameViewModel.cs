@@ -17,14 +17,14 @@ namespace Peanut.Services.Models.Categories
         public string NameAndCount =>
             $"{this.Name} ({this.CountOfAllSayings})";
 
-        // JokesCount
+        // SayingsCount
         public int CountOfAllSayings { get; set; }
 
         public void CreateMappings(IMapperConfigurationExpression configuration)
         {
             configuration.CreateMap<Category, CategoryIdAndNameViewModel>()
                 .ForMember(x => x.CountOfAllSayings,
-                    m => m.MapFrom()(c => c.Sayings.Count()));
+                    m => m.MapFrom(c => c.Sayings.Count()));
         }
     }
 }

@@ -7,7 +7,7 @@ using Peanut.Data;
 using Peanut.Data.Common;
 using Peanut.Data.Models;
 using Peanut.Services.DataServices;
-//using Peanut.Services.MachineLearning;
+using Peanut.Services.MachineLearning;
 using Peanut.Services.Mapping;
 using Peanut.Services.Models.Home;
 //using Peanut.Web.Infrastructure;
@@ -66,10 +66,9 @@ namespace Peanut.Web
                 )
                 .AddEntityFrameworkStores<PeanutContext>();
 
-  //          services.AddMvc()
-  //              .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc()
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddAutoMapper();
-
 
             services.Configure<RouteOptions>(routeOptions =>
             {
@@ -80,7 +79,7 @@ namespace Peanut.Web
             services.AddScoped(typeof(IRepository<>), typeof(DbRepository<>));
             services.AddScoped<ISayingsService, SayingsService>();
             services.AddScoped<ICategoriesService, CategoriesService>();
-   //         services.AddScoped<ISayingsCategorizer, SayingsCategorizer>();
+            services.AddScoped<ISayingsCategorizer, SayingsCategorizer>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

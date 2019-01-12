@@ -16,7 +16,7 @@ namespace Peanut.Services.Models.Home
 
         public void CreateMappings(IMapperConfigurationExpression configuration)
         {
-            // configuration.CreateMap<Saying, IndexSayingViewModel>().ForMember(x => x.CategoryName, x => x.MapFrom(j => j.Category.Name))
+            // configuration.CreateMap<Saying, IndexSayingsViewModel>().ForMember(x => x.CategoryName, x => x.MapFrom(j => j.Category.Name))
         }
     }
 }

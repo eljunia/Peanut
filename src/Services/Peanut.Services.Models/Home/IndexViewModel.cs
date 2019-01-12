@@ -7,3 +7,4 @@ namespace Peanut.Services.Models.Home
         public IEnumerable<IndexSayingViewModel> Sayings { get; set; }
     }
 }
+

@@ -8,12 +8,16 @@ namespace Peanut.Services.DataServices
 {
     public interface ISayingsService
     {
-        IEnumerable<Saying> GetRandomSayings(int count);
+        IEnumerable<IndexSayingViewModel> GetRandomSayings(int count);
 
         int GetCount();
 
         Task<int> Create(int categoryId, string content);
 
         TViewModel GetSayingById<TViewModel>(int id);
+
+        IEnumerable<SayingSimpleViewModel> GetAllByCategory(int categoryId);
+
+        bool AddRatingToSaying(int sayingId, int rating);
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Peanut.Services.DataServices;
-//using Peanut.Services.MachineLearning;
+using Peanut.Services.MachineLearning;
 using Peanut.Services.Models.Sayings;
 using Peanut.Web.Model.Sayings;
 using Microsoft.AspNetCore.Authorization;
@@ -17,16 +17,16 @@ namespace Peanut.Web.Controllers
     {
         private readonly ISayingsService sayingsService;
         private readonly ICategoriesService categoriesService;
-//        private readonly ISayingsCategorizer sayingsCategorizer;
+        private readonly ISayingsCategorizer sayingsCategorizer;
 
         public SayingsController(
             ISayingsService sayingsService,
-            ICategoriesService categoriesService)
- //           ISayingsCategorizer sayingsCategorizer)
+            ICategoriesService categoriesService,
+            ISayingsCategorizer sayingsCategorizer)
         {
             this.sayingsService = sayingsService;
             this.categoriesService = categoriesService;
- //           this.sayingsCategorizer = sayingsCategorizer;
+            this.sayingsCategorizer = sayingsCategorizer;
         }
 
         [Authorize]
@@ -50,7 +50,7 @@ namespace Peanut.Web.Controllers
             }
 
             var id = await this.sayingsService.Create(input.CategoryId, input.Content);
-            return this.RedirectToAction("Details", new { id = id });
+            return this.RedirectToAction("Details", new {id = id});
         }
 
         public IActionResult Details(int id)
@@ -59,31 +59,31 @@ namespace Peanut.Web.Controllers
             return this.View(saying);
         }
 
- /*       [HttpPost]
+        [HttpPost]
         public SuggestCategoryResult SuggestCategory(string saying)
         {
             var category = this.sayingsCategorizer.Categorize("MlModels/SayingsCategoryModel.zip", saying);
             var categoryId = this.categoriesService.GetCategoryId(category);
-            return new SuggestCategoryResult { CategoryId = categoryId ?? 0, CategoryName = category };
+            return new SuggestCategoryResult {CategoryId = categoryId ?? 0, CategoryName = category};
         }
 
-        [HttpPost]
-        public object RateSaying(int sayingId, int rating)
+        /*       [HttpPost]
+               public object RateSaying(int sayingId, int rating)
+               {
+                   var rateSaying = this.sayingsService.AddRatingToSaying(sayingId, rating);
+                   if (!rateSaying)
+                   {
+                       return Json($"An error occurred while processing your vote");
+                   }
+                   var successMessage = $"You successfully rated the saying with rating of {rating}";
+                   return Json(successMessage);
+               }
+       */
+        public class SuggestCategoryResult
         {
-            var rateSaying = this.sayingsService.AddRatingToSaying(sayingId, rating);
-            if (!rateSaying)
-            {
-                return Json($"An error occurred while processing your vote");
-            }
-            var successMessage = $"You successfully rated the saying with rating of {rating}";
-            return Json(successMessage);
+            public int CategoryId { get; set; }
+
+            public string CategoryName { get; set; }
         }
-    }
-
-    public class SuggestCategoryResult
-    {
-        public int CategoryId { get; set; }
-
-        public string CategoryName { get; set; }*/
     }
 }
